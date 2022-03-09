@@ -1,1 +1,1 @@
-# odin-rock_paper_scissors
+# Rock Paper Scissors (version 1.0)

@@ -27,9 +27,17 @@ function computerPlay() {
 // Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation).
 
 function playRound(playerSelection, computerSelection) {
-    let player = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+    
     let comp = computerSelection;
     let result = ""
+    
+    if (playerSelection === null) {
+        console.log("Invalid response. Please try again.");
+        result = "Redo";
+        return result;
+    } 
+
+    let player = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 
     if ((player === "Rock" && comp === "Paper") || (player === "Paper" && comp === "Scissors") || (player === "Scissors" && comp === "Rock")) {
         console.log("You Lose! " + comp + " beats " + player);
@@ -111,4 +119,10 @@ function game() {
     }
 }
 
-game();
+// Triggers the game() function to start once any key is pressed when viewing the page
+
+document.addEventListener("keydown", logKey);
+
+function logKey(anykey) {
+    game();
+}
