@@ -80,7 +80,9 @@ function game() {
     console.log("Let's play Rock, Paper, Scissors! Best out of five games win - if the result is a tie or invalid answer, we will retry for that round.")
 
     for (let i = 1; i <= 5; i++) {
-        let playerSelection = "rock";
+
+        // Note that prompt() used below for the user input is the same as window.prompt() - they are interchangeable
+        let playerSelection = prompt("Please enter your choice for this round");
         let computerSelection = computerPlay();
 
         console.log("Round " + i + " - FIGHT!!!");
